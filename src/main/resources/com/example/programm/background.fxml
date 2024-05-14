@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1245.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programm.HelloController">
+   <children>
+      <Button fx:id="mainButton" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#mainButtonAction" prefHeight="39.0" prefWidth="185.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="головна" textFill="#c9c9c9">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="orderButton" layoutX="199.0" layoutY="26.0" mnemonicParsing="false" onAction="#orderButtonAction" prefHeight="39.0" prefWidth="185.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="замовлення" textFill="#c9c9c9">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="390.0" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="74.0" style="-fx-background-color: #2b2b2b;" text="≡" textFill="#5b5b5a">
+         <font>
+            <Font name="Malgun Gothic Bold" size="29.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="mainPanel" layoutX="-34.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="759.0" prefWidth="1428.0">
+         <children>
+            <Label fx:id="mainPageDateLabel" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="71.0" layoutY="24.0" prefHeight="97.0" prefWidth="493.0" style="-fx-border-color: #616161;" text="25 травня 2024р" textAlignment="CENTER" textFill="#06a0cfe7" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Malgun Gothic" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="14.0" prefHeight="312.0" prefWidth="514.0" style="-fx-border-color: #616161;" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" prefHeight="552.0" prefWidth="1227.0" style="-fx-border-color: #616161;" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="41.0" />
+               </font>
+            </Label>
+            <Label fx:id="mainPageAllOrders" alignment="CENTER" layoutX="84.0" layoutY="135.0" prefHeight="71.0" prefWidth="121.0" text="0" textFill="#c9c9c9">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="199.0" prefHeight="27.0" prefWidth="121.0" text="всього заказів" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="84.0" layoutY="275.0" prefHeight="27.0" prefWidth="121.0" text="видано" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="mainPageOrdersAreStillProcess" alignment="CENTER" layoutX="84.0" layoutY="226.0" prefHeight="63.0" prefWidth="121.0" text="0" textFill="#c9c9c9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="232.0" layoutY="150.0" prefHeight="27.0" prefWidth="185.0" text="🔧 в ремотні всього" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="232.0" layoutY="186.0" prefHeight="27.0" prefWidth="185.0" text="⏰ термінові" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="232.0" layoutY="219.0" prefHeight="27.0" prefWidth="185.0" text="🔥 прострочені" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="mainPageOrdersInRemont" alignment="CENTER" layoutX="445.0" layoutY="138.0" prefHeight="39.0" prefWidth="102.0" text="0" textFill="#c9c9c9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="mainPageUrgentOrders" alignment="CENTER" layoutX="445.0" layoutY="173.0" prefHeight="39.0" prefWidth="102.0" text="0" textFill="#c9c9c9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="mainPageOverdueOrders" alignment="CENTER" layoutX="445.0" layoutY="213.0" prefHeight="39.0" prefWidth="102.0" text="0" textFill="#c9c9c9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="232.0" layoutY="232.0" prefHeight="51.0" prefWidth="300.0" text="┄┄┄┄┄┄┄┄┄┄┄┄" textFill="#049fcf">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label layoutX="232.0" layoutY="270.0" prefHeight="27.0" prefWidth="185.0" text="☑ чекають видачі" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="581.0" layoutY="16.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="312.0" prefWidth="680.0" style="-fx-border-color: #616161;" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="42.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+            </Label>
+            <Label fx:id="mainPageDoneOrders" alignment="CENTER" layoutX="445.0" layoutY="264.0" prefHeight="39.0" prefWidth="102.0" text="0" textFill="#c9c9c9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="71.0" layoutY="132.0" prefHeight="184.0" prefWidth="493.0" style="-fx-border-color: #616161;" textAlignment="CENTER" textFill="#c9c9c9" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Malgun Gothic" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="mainPagePhoneNumber" layoutX="597.0" layoutY="73.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="51.0" prefWidth="200.0" promptText="номер телефону" style="-fx-border-color: #222222; -fx-background-color: #656565;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mainPageGroup" layoutX="823.0" layoutY="73.0" prefHeight="51.0" prefWidth="200.0" promptText="група" style="-fx-background-color: #656565; -fx-border-color: #222222;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mainPageCondition" layoutX="1048.0" layoutY="73.0" prefHeight="51.0" prefWidth="200.0" promptText="стан" style="-fx-background-color: #656565; -fx-border-color: #222222;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mainPageClient" layoutX="597.0" layoutY="161.0" prefHeight="51.0" prefWidth="200.0" promptText="клієнт" style="-fx-background-color: #656565; -fx-border-color: #222222;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mainPageColor" layoutX="823.0" layoutY="161.0" prefHeight="51.0" prefWidth="200.0" promptText="колір" style="-fx-background-color: #656565; -fx-border-color: #222222;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mainPageSerialNumber" layoutX="1048.0" layoutY="161.0" prefHeight="51.0" prefWidth="200.0" promptText="серійний номер" style="-fx-background-color: #656565; -fx-border-color: #222222;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mainPageDate" layoutX="597.0" layoutY="245.0" prefHeight="51.0" prefWidth="200.0" promptText="дата видачі" style="-fx-background-color: #656565; -fx-border-color: #222222;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="mainPageGiveMyMoney" layoutX="821.0" layoutY="245.0" prefHeight="51.0" prefWidth="200.0" promptText="до сплати" style="-fx-background-color: #656565; -fx-border-color: #222222;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="61.0" layoutY="335.0" prefHeight="204.0" prefWidth="1200.0" style="-fx-border-color: #616161;" textAlignment="CENTER" textFill="#c9c9c9" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Malgun Gothic" size="42.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="71.0" layoutY="342.0" prefHeight="184.0" prefWidth="812.0" style="-fx-border-color: #616161;" textAlignment="CENTER" textFill="#c9c9c9" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Malgun Gothic" size="42.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="596.0" layoutY="28.0" prefHeight="32.0" prefWidth="649.0" text="замовлення" textFill="#049fcf">
+               <font>
+                  <Font name="Malgun Gothic" size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="895.0" layoutY="345.0" prefHeight="184.0" prefWidth="352.0" style="-fx-border-color: #616161;" textAlignment="CENTER" textFill="#c9c9c9" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Malgun Gothic" size="42.0" />
+               </font>
+            </Label>
+            <Button fx:id="mainPageSearchOrders" layoutX="907.0" layoutY="456.0" mnemonicParsing="false" onAction="#mainPageSearchOrdersAction" prefHeight="51.0" prefWidth="327.0" style="-fx-background-color: #039fd2; -fx-border-color: #616161; -fx-opacity: 0.7;" text="пошук">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <TextField fx:id="mainPageSearchOrderTextField" layoutX="907.0" layoutY="394.0" prefHeight="51.0" prefWidth="327.0" promptText="номер телефону" style="-fx-background-color: #656565; -fx-border-color: #616161;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Label alignment="TOP_LEFT" layoutX="71.0" layoutY="424.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="97.0" prefWidth="804.0" textFill="#b2b2b2" textOverrun="CLIP">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="897.0" layoutY="354.0" prefHeight="32.0" prefWidth="352.0" text="пошук замовлення" textFill="#9e9e9e">
+               <font>
+                  <Font name="Malgun Gothic" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="mainPageAddOrdersButton" layoutX="1048.0" layoutY="245.0" mnemonicParsing="false" onAction="#mainPageAddOrdersButtonAction" prefHeight="51.0" prefWidth="200.0" style="-fx-background-color: #039fd2; -fx-border-color: #616161; -fx-opacity: 0.7;" text="додати замовлення">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="notesTextArea" layoutX="78.0" layoutY="351.0" prefHeight="167.0" prefWidth="796.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
+            <Button fx:id="saveNotesButton" layoutX="812.0" layoutY="351.0" mnemonicParsing="false" onAction="#saveNotesButtonAction" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: #039fd2; -fx-border-color: #616161; -fx-opacity: 0.5;" text="зберегти">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="showOrdersAncorPane" layoutX="522.0" layoutY="41.0" prefHeight="409.0" prefWidth="428.0" style="-fx-background-color: #2b2b2b; -fx-border-color: #6BC15A;" visible="false">
+               <children>
+                  <Button fx:id="exitAppearedWindow" layoutX="402.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitAppearedWindowActon" opacity="0.4" style="-fx-background-color: EE0303;" text="X" />
+                  <Label fx:id="orderWindows" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="11.0" prefHeight="27.0" prefWidth="185.0" text="замовлення" textFill="#6dbd5be8">
+                     <font>
+                        <Font name="Malgun Gothic" size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="changePhoneNumberTextArea" layoutX="33.0" layoutY="60.0" prefHeight="51.0" prefWidth="171.0" promptText="номер телефону">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="changeGroupTextArea" layoutX="229.0" layoutY="60.0" prefHeight="51.0" prefWidth="171.0" promptText="група">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="changeClientTextArea" layoutX="33.0" layoutY="131.0" prefHeight="51.0" prefWidth="171.0" promptText="клієнт">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="changeConditionTextArea" layoutX="229.0" layoutY="131.0" prefHeight="51.0" prefWidth="171.0" promptText="стан">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="changeColorTextArea" layoutX="33.0" layoutY="199.0" prefHeight="51.0" prefWidth="171.0" promptText="колір">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="changeSeriaNumberTextArea" layoutX="229.0" layoutY="199.0" prefHeight="51.0" prefWidth="171.0" promptText="серійний номер">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="changeDateTextArea" layoutX="33.0" layoutY="270.0" prefHeight="51.0" prefWidth="171.0" promptText="дата видачі">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="changeGiveMyMoneyTextArea" layoutX="229.0" layoutY="270.0" prefHeight="51.0" prefWidth="171.0" promptText="до сплати">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="saveChangesOrdersButton" layoutX="224.0" layoutY="335.0" mnemonicParsing="false" onAction="#saveChangesOrdersButtonActoin" prefHeight="41.0" prefWidth="178.0" style="-fx-background-color: #6BC15A; -fx-border-color: #616161; -fx-opacity: 0.6;" text="зберегти">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="errorTextField" alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="27.0" prefHeight="291.0" prefWidth="374.0" textAlignment="CENTER" textFill="#6dbd5be8" visible="false">
+                     <font>
+                        <Font name="Malgun Gothic" size="31.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="DeleteOrdersButton" layoutX="28.0" layoutY="335.0" mnemonicParsing="false" onAction="#DeleteOrdersButtonAction" prefHeight="41.0" prefWidth="178.0" style="-fx-background-color: #FD501B; -fx-border-color: #616161; -fx-opacity: 0.5;" text="видалити ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="orderPanel" layoutX="14.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="548.0" prefWidth="1218.0" style="-fx-border-color: #616161;" visible="false">
+         <children>
+            <Button minWidth="45.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="54.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="№" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="232.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="144.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="дата" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="54.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="номер телефону" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="657.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="131.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="клієнт" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="520.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="137.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="стан" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="788.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="144.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="колір" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="1110.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="до сплати" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="376.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="144.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="група" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="932.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="серійний номер" textFill="#c9c9c9">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="dataBaseTextArea" layoutY="39.0" pickOnBounds="false" prefHeight="506.0" prefWidth="1220.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextArea>
+         </children>
+      </AnchorPane>
+      <Button fx:id="searchUrgentOrdersButton" layoutX="482.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchUrgentOrdersButtonAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="термінові" textFill="#c9c9c9" visible="false">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchPendingIssuanceOrdersButton" layoutX="632.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchPendingIssuanceOrdersButtonAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="чекають видачі" textFill="#c9c9c9" visible="false">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchOverdueOrdersButton" layoutX="782.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchOverdueOrdersButtonAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="прострочені" textFill="#c9c9c9" visible="false">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchDoneOrdersButton1" layoutX="932.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchDoneOrdersButtonAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="видані" textFill="#c9c9c9" visible="false">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchAllOrdersButton" layoutX="1082.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchAllOrdersButtonAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #333333; -fx-border-color: #616161;" text="всі" textFill="#c9c9c9" visible="false">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
