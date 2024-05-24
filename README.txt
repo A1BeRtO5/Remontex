@@ -1,1 +1,1 @@
-Відкрийте і прочитайте REMONTEX.pdf
+Відкрийте і прочитайте REMONTEX_INFO.pdf
